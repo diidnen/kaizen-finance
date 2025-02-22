@@ -45,5 +45,5 @@ This project is designed to help beginners understand the flow of a full-stack a
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd <project-directory>
+git@github.com:diidnen/kaizen-finance.git
+
