@@ -1,0 +1,7 @@
+com\loginapp\loginbackend\Registrate$RegisterRequest.class
+com\loginapp\loginbackend\config\SecurityConfig.class
+com\loginapp\loginbackend\repository\VerificationTokenRepository.class
+com\loginapp\loginbackend\Registrate.class
+com\loginapp\loginbackend\entity\VerificationToken.class
+com\loginapp\loginbackend\Registrate$ApiResponse.class
+com\loginapp\loginbackend\Registrate$VerificationRequest.class
