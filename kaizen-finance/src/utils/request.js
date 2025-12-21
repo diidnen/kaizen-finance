@@ -6,11 +6,21 @@ import {ElMessage} from 'element-plus'
 export const TokenKey='access_Token'
 
 // 从环境变量读取 API 基础 URL，如果没有则使用相对路径（开发环境使用 Vite proxy）
-// 注意：如果 VITE_API_BASE_URL 已经包含 /api，则直接使用；否则需要添加 /api
+// 注意：环境变量应该不包含 /api，因为前端请求路径已经包含 /api
 let API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
-// 如果环境变量不包含 /api，且不是相对路径，则添加 /api
-if (API_BASE_URL.startsWith('http') && !API_BASE_URL.endsWith('/api')) {
-  API_BASE_URL = API_BASE_URL.endsWith('/') ? API_BASE_URL + 'api' : API_BASE_URL + '/api'
+
+// 如果是生产环境的完整 URL，确保不重复添加 /api
+if (API_BASE_URL.startsWith('http')) {
+  // 移除末尾的 /api（如果存在），因为前端请求路径已经包含 /api
+  if (API_BASE_URL.endsWith('/api')) {
+    API_BASE_URL = API_BASE_URL.slice(0, -4) // 移除 '/api'
+  }
+  // 确保 URL 以 / 结尾（如果没有）
+  if (!API_BASE_URL.endsWith('/')) {
+    API_BASE_URL = API_BASE_URL + '/'
+  }
+  // 添加 api 前缀
+  API_BASE_URL = API_BASE_URL + 'api'
 }
 
 const service = axios.create({
