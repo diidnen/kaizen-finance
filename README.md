@@ -1,49 +1,83 @@
-# Full Stack Project Example - Vue3 + Spring Boot (Session-Based Authentication)
+# Kaizen Finance - Full Stack Application
 
-This is a full-stack project where the front end is built with **Vue 3** and **Vite** for development and bundling, while the back end uses **Spring Boot** to provide **CRUD** services and **Session** authentication. The project implements functionality for user purchases, modifications, deletions, and user login authentication.
+A comprehensive finance management application built with Vue 3 frontend and Spring Boot backend.
 
 ## Technology Stack
 
 ### Frontend
-- **Vue 3**: A modern front-end framework that uses a reactive design, making it easier to develop dynamic single-page applications (SPA).
-- **Vite**: A fast build tool that is based on native ES modules.
-- **Element Plus**: A UI component library based on Vue 3 for building modern user interfaces.
+- **Vue 3**: Modern reactive frontend framework
+- **Vite**: Fast build tool based on ES modules
+- **Element Plus**: UI component library for Vue 3
+- **Vue Router**: Client-side routing
+- **Axios**: HTTP client for API requests
 
 ### Backend
-- **Spring Boot**: Used for quickly building RESTful API services.
-- **JPA (Java Persistence API)**: Used to interact with database entities.
-- **Spring Data JPA**: Simplifies the configuration and use of JPA.
-- **Lombok**: A Java library used to generate common methods (such as getters, setters, `toString()`, etc.) via annotations.
-- **Jakarta**: Used to provide support for RESTful API endpoints and handling API requests.
-- **Spring Security**: Provides user login authentication (based on Session management).
+- **Spring Boot 3.2.1**: RESTful API services
+- **Spring Security**: Authentication and authorization
+- **Spring Data JPA**: Database interaction
+- **MySQL 8.0**: Database
+- **Lombok**: Code generation
+- **Java 17**: Runtime environment
 
-### Build Tools
-- **Maven**: Used for managing dependencies and building the backend project.
+## Features
 
-## Project Features
-
-- **CRUD Services**: Implements functionality for buying, modifying, and deleting items.
-- **User Login and Authentication**: Uses **Session** for user login authentication. All operations require authentication.
-- **RESTful API**: The backend exposes RESTful API endpoints that the frontend communicates with for data exchange.
+- User authentication and authorization
+- Service pricing and quote generation
+- Order management
+- Contact form with email notifications
+- PDF and CSV export for quotes
+- Contract management
+- Testimonials management
 
 ## Project Structure
 
-🤭 Please refer to the actual project directory for detailed structure.
-
-## Great for Beginners
-
-This project is designed to help beginners understand the flow of a full-stack application. By working on this project, you will gain a good understanding of how frontend and backend interact, how user authentication works, and how to manage data with CRUD operations.
-
-## How It Works
-
-- The frontend (Vue3 + Element Plus) communicates with the backend (Spring Boot) via RESTful API requests.
-- The backend uses **Session-based authentication**. After a user logs in, their session is saved, and all subsequent requests require the session to be valid for the user to access protected resources.
-- The backend handles CRUD operations for items (buy, modify, delete), while also ensuring that only authenticated users can perform these actions.
+```
+kaizen-finance-master/
+├── kaizen-finance/          # Frontend (Vue 3)
+│   ├── src/
+│   ├── public/
+│   └── package.json
+└── kaizen-finance-backend/  # Backend (Spring Boot)
+    └── backend/
+        └── src/
+```
 
 ## Development Setup
 
-### 1. Clone the Repository
+### Frontend Setup
 
 ```bash
-git@github.com:diidnen/kaizen-finance.git
+cd kaizen-finance
+npm install
+npm run dev
+```
 
+Frontend will run on http://localhost:5173
+
+### Backend Setup
+
+1. Install MySQL and create database:
+```sql
+CREATE DATABASE kaizenfinance;
+```
+
+2. Update `application.properties` with your database credentials
+
+3. Run backend:
+```bash
+cd kaizen-finance-backend/backend
+mvn spring-boot:run
+```
+
+Backend will run on http://localhost:8080
+
+## Deployment
+
+See deployment guides:
+- `VERCEL_RAILWAY_TUTORIAL.md` - Complete deployment tutorial
+- `DEPLOY_VERCEL_RAILWAY.md` - Quick deployment guide
+- `DEPLOYMENT_GUIDE.md` - All deployment options
+
+## License
+
+Private project
