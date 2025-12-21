@@ -26,7 +26,7 @@
   email.brevo.api.key=${EMAIL_BREVO_API_KEY:默认值}
   
 部署平台设置（Vercel/Railway）:
-  EMAIL_BREVO_API_KEY = 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
+  EMAIL_BREVO_API_KEY = your_brevo_api_key_here
   
 应用运行时:
   读取环境变量 → 使用真实的 API Key
@@ -101,7 +101,7 @@ SPRING_JPA_SHOW_SQL=false
 
 # 邮件服务配置（这里填入真实的 API Key）
 EMAIL_SERVICE_PROVIDER=brevo
-EMAIL_BREVO_API_KEY=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
+EMAIL_BREVO_API_KEY=your_brevo_api_key_here  # 在 Railway 中填入您的真实 API Key
 EMAIL_BREVO_FROM_EMAIL=info@kaizensolution.co.uk
 EMAIL_BREVO_FROM_NAME=Kaizen Solution
 
@@ -191,7 +191,7 @@ SPRING_DATASOURCE_DRIVER_CLASS_NAME = com.mysql.cj.jdbc.Driver
 SPRING_JPA_HIBERNATE_DDL_AUTO = update
 SPRING_JPA_SHOW_SQL = false
 EMAIL_SERVICE_PROVIDER = brevo
-EMAIL_BREVO_API_KEY = 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
+EMAIL_BREVO_API_KEY = your_brevo_api_key_here  # 在 Railway 中填入您的真实 API Key
 EMAIL_BREVO_FROM_EMAIL = info@kaizensolution.co.uk
 EMAIL_BREVO_FROM_NAME = Kaizen Solution
 SERVER_PORT = 8080

@@ -248,7 +248,7 @@ public class CorsConfig implements WebMvcConfigurer {
 
    ```
    Name: EMAIL_BREVO_API_KEY
-   Value: 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
+   Value: your_brevo_api_key_here  # 在 Railway 中填入您的真实 API Key
    ```
    ⚠️ **重要**：这里填入您的真实 Brevo API Key。这个值只存储在 Railway 的环境变量中，不会出现在代码里，所以是安全的。
 

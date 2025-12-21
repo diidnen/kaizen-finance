@@ -4,6 +4,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# 确保 target 目录下的所有文件都被忽略
+**/target/**
+
 # IDE
 .idea/
 *.iml
