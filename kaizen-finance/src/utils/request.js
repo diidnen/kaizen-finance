@@ -6,7 +6,12 @@ import {ElMessage} from 'element-plus'
 export const TokenKey='access_Token'
 
 // 从环境变量读取 API 基础 URL，如果没有则使用相对路径（开发环境使用 Vite proxy）
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
+// 注意：如果 VITE_API_BASE_URL 已经包含 /api，则直接使用；否则需要添加 /api
+let API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
+// 如果环境变量不包含 /api，且不是相对路径，则添加 /api
+if (API_BASE_URL.startsWith('http') && !API_BASE_URL.endsWith('/api')) {
+  API_BASE_URL = API_BASE_URL.endsWith('/') ? API_BASE_URL + 'api' : API_BASE_URL + '/api'
+}
 
 const service = axios.create({
   baseURL: API_BASE_URL,  // 支持环境变量配置，生产环境使用完整 URL，开发环境使用相对路径
