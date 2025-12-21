@@ -5,7 +5,7 @@
     "buildCommand": "cd kaizen-finance-backend/backend && mvn clean package -DskipTests"
   },
   "deploy": {
-    "startCommand": "cd kaizen-finance-backend/backend && java -jar target/backend-1.0-SNAPSHOT.jar",
+    "startCommand": "cd kaizen-finance-backend/backend && java -jar target/*.jar",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
   }
