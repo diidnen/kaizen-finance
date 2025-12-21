@@ -5,6 +5,9 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
+// Get __dirname equivalent for ES modules
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -21,16 +24,7 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, 'index.html'),
-        home: path.resolve(__dirname, 'src/components/home.vue'),
-        services: path.resolve(__dirname, 'src/components/services.vue'),
-        training: path.resolve(__dirname, 'src/components/training.vue'),
-        pricing: path.resolve(__dirname, 'src/components/pricing.vue'),
-        order: path.resolve(__dirname, 'src/components/order.vue'),
-        contact: path.resolve(__dirname, 'src/components/contact.vue'),
-        login: path.resolve(__dirname, 'src/components/login.vue')
-      }
+      input: path.resolve(__dirname, 'index.html')
     }
   },
   resolve: {
