@@ -248,8 +248,9 @@ public class CorsConfig implements WebMvcConfigurer {
 
    ```
    Name: EMAIL_BREVO_API_KEY
-   Value: your_brevo_api_key_here  # 替换为您的实际 API Key
+   Value: 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
    ```
+   ⚠️ **重要**：这里填入您的真实 Brevo API Key。这个值只存储在 Railway 的环境变量中，不会出现在代码里，所以是安全的。
 
    ```
    Name: EMAIL_BREVO_FROM_EMAIL
@@ -260,6 +261,8 @@ public class CorsConfig implements WebMvcConfigurer {
    Name: EMAIL_BREVO_FROM_NAME
    Value: Kaizen Solution
    ```
+   
+   💡 **说明**：环境变量是安全的配置方式。代码中只使用 `${EMAIL_BREVO_API_KEY}` 占位符，实际值在 Railway 平台设置。这样即使代码公开，API Key 也不会泄露。
 
    **服务器配置**：
    ```
