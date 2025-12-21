@@ -248,7 +248,7 @@ public class CorsConfig implements WebMvcConfigurer {
 
    ```
    Name: EMAIL_BREVO_API_KEY
-   Value: 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
+   Value: your_brevo_api_key_here  # 替换为您的实际 API Key
    ```
 
    ```
