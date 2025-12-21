@@ -13,7 +13,9 @@ public class CorsConfig implements WebMvcConfigurer {
                     "http://localhost:5173", 
                     "http://localhost:3000", 
                     "http://localhost:4173",
-                    "https://*.vercel.app"  // 允许所有 Vercel 部署的域名
+                    "https://kaizen-finance.vercel.app",
+                    "https://www.kaizenfinance.co.uk",
+                    "https://kaizenfinance.co.uk"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")

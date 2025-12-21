@@ -33,7 +33,9 @@ public class SecurityConfig {
             "http://localhost:5173", 
             "http://localhost:3000", 
             "http://localhost:4173",
-            "https://*.vercel.app"  // 允许所有 Vercel 部署的域名
+            "https://kaizen-finance.vercel.app",
+            "https://www.kaizenfinance.co.uk",
+            "https://kaizenfinance.co.uk"
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("Content-Type", "Authorization", "X-Requested-With"));
