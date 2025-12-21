@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  # MySQL 数据库
+  db:
+    image: mysql:8.0
+    container_name: kaizen-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-your_secure_password}
+      MYSQL_DATABASE: kaizenfinance
+      MYSQL_USER: ${DB_USER:-kaizen_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-your_secure_password}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - kaizen-network
+
+  # Spring Boot 后端
+  backend:
+    build:
+      context: ./kaizen-finance-backend/backend
+      dockerfile: Dockerfile
+    container_name: kaizen-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/kaizenfinance?allowPublicKeyRetrieval=true&useSSL=false
+      - SPRING_DATASOURCE_USERNAME=${DB_USER:-kaizen_user}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD:-your_secure_password}
+      - EMAIL_SERVICE_PROVIDER=${EMAIL_SERVICE_PROVIDER:-brevo}
+      - EMAIL_BREVO_API_KEY=${EMAIL_BREVO_API_KEY}
+      - EMAIL_BREVO_FROM_EMAIL=${EMAIL_BREVO_FROM_EMAIL:-info@kaizensolution.co.uk}
+      - EMAIL_BREVO_FROM_NAME=${EMAIL_BREVO_FROM_NAME:-Kaizen Solution}
+      - SERVER_PORT=8080
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - kaizen-network
+    restart: unless-stopped
+
+  # Vue.js 前端
+  frontend:
+    build:
+      context: ./kaizen-finance
+      dockerfile: Dockerfile
+    container_name: kaizen-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - kaizen-network
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  kaizen-network:
+    driver: bridge
+
