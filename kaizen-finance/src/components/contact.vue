@@ -166,7 +166,7 @@
 </template>
 
 <script>
-const CONTACT_EMAIL = 'Info@kaizensolution.co.uk'
+import { ElMessage } from 'element-plus'
 
 export default {
   name: 'Contact',
@@ -267,25 +267,30 @@ export default {
       this.isSubmitting = true;
 
       const serviceLabels = this.selectedServices.map(s => s.label).join(', ');
-      const lines = [
-        `Name: ${submitData.name}`,
-        `Email: ${submitData.email}`,
-        submitData.phone && `Phone: ${submitData.phone}`,
-        submitData.businessType && `Business Sector: ${submitData.businessType}`,
-        submitData.turnover && `Annual Turnover: ${submitData.turnover}`,
-        submitData.countryOfTrade && `Country of Trade: ${submitData.countryOfTrade}`,
-        submitData.fxCurrency && `Preferred FX Currency: ${submitData.fxCurrency}`,
-        serviceLabels && `Services: ${serviceLabels}`,
-        submitData.otherServicesText && `Other Services: ${submitData.otherServicesText}`,
-        submitData.additionalInfo && `Additional Info: ${submitData.additionalInfo}`,
-      ].filter(Boolean);
 
-      const subject = encodeURIComponent(`Enquiry from ${submitData.name}`);
-      const body = encodeURIComponent(lines.join('\n'));
-      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+      try {
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ...submitData,
+            serviceLabels,
+          }),
+        });
 
-      this.formData.submit = true;
-      this.isSubmitting = false;
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || 'Failed to send enquiry');
+        }
+
+        this.formData.submit = true;
+      } catch (error) {
+        console.error('Error sending enquiry:', error);
+        ElMessage.error(error.message || 'Failed to send enquiry. Please email us directly at Info@kaizensolution.co.uk');
+      } finally {
+        this.isSubmitting = false;
+      }
     },
     handleCountryChange() {
       if (this.formData.countryOfTrade === 'other') {
