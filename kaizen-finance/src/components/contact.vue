@@ -167,6 +167,7 @@
 
 <script>
 import { ElMessage } from 'element-plus'
+import { submitContact } from '../../lib/submitContact.js'
 
 export default {
   name: 'Contact',
@@ -269,22 +270,11 @@ export default {
       const serviceLabels = this.selectedServices.map(s => s.label).join(', ');
 
       try {
-        const response = await fetch('/api/send-email', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            ...submitData,
-            serviceLabels,
-          }),
-        });
-
-        const result = await response.json();
-
-        if (!response.ok || !result.success) {
-          throw new Error(result.message || 'Failed to send enquiry');
-        }
-
-        this.formData.submit = true;
+        await submitContact(
+          { ...submitData, serviceLabels },
+          import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+        )
+        this.formData.submit = true
       } catch (error) {
         console.error('Error sending enquiry:', error);
         ElMessage.error(error.message || 'Failed to send enquiry. Please email us directly at Info@kaizensolution.co.uk');

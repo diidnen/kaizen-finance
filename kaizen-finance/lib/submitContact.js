@@ -17,7 +17,7 @@ function buildMessage(data) {
 
 export async function submitContact(data, accessKey) {
   if (!accessKey) {
-    throw new Error('Contact form is not configured. Please set WEB3FORMS_ACCESS_KEY.')
+    throw new Error('Contact form is not configured. Please set VITE_WEB3FORMS_ACCESS_KEY.')
   }
 
   const response = await fetch('https://api.web3forms.com/submit', {
@@ -40,6 +40,11 @@ export async function submitContact(data, accessKey) {
       message: buildMessage(data),
     }),
   })
+
+  const contentType = response.headers.get('content-type') || ''
+  if (!contentType.includes('application/json')) {
+    throw new Error('Failed to send enquiry. Please email us at Info@kaizensolution.co.uk')
+  }
 
   const result = await response.json()
 
