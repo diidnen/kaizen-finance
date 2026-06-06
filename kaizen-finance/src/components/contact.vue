@@ -148,7 +148,7 @@
           <h4>Kaizen Finance Solution</h4>
           <p>London, UK</p>
           <h4>Contact Us</h4>
-          <p>Info@kaizensolution.co.uk</p>
+          <p><a href="mailto:Info@kaizensolution.co.uk">Info@kaizensolution.co.uk</a></p>
 
           <h4>Hours</h4>
           <div class="business-hours">
@@ -158,16 +158,15 @@
       </div>
     </section>
 
-    <section class="contact-content" v-show="formData.submit">
+    <section class="contact-content success-message" v-show="formData.submit">
       <h2>Thank you for your submission!</h2>
-      <p>PLEASE CHECK YOUR EMAIL,WE WILL GIVE YOU A USERNAME AND PASSWORD TO VIEW OUR SERVICES AS SOON AS POSSIBLE</p>
-      
+      <p>We have received your enquiry and will get back to you within 24 hours.</p>
     </section>
   </div>
 </template>
 
 <script>
-import { http, auth } from '@/utils/request'
+const CONTACT_EMAIL = 'Info@kaizensolution.co.uk'
 
 export default {
   name: 'Contact',
@@ -265,26 +264,28 @@ export default {
         }
       }
       
-      console.log('Request data:', submitData);
-      
-      try {
-        this.isSubmitting = true;
-        const response = await http.post('/api/send-email', submitData);
-        console.log(response);
-        if (!response) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const result = response;
-        console.log(result);
-        if (result.success) {
-          this.formData.submit = true;
-        }
-      } catch (error) {
-        console.error('Error sending email:', error);
-      } finally {
-        this.isSubmitting = false;
-      }
+      this.isSubmitting = true;
+
+      const serviceLabels = this.selectedServices.map(s => s.label).join(', ');
+      const lines = [
+        `Name: ${submitData.name}`,
+        `Email: ${submitData.email}`,
+        submitData.phone && `Phone: ${submitData.phone}`,
+        submitData.businessType && `Business Sector: ${submitData.businessType}`,
+        submitData.turnover && `Annual Turnover: ${submitData.turnover}`,
+        submitData.countryOfTrade && `Country of Trade: ${submitData.countryOfTrade}`,
+        submitData.fxCurrency && `Preferred FX Currency: ${submitData.fxCurrency}`,
+        serviceLabels && `Services: ${serviceLabels}`,
+        submitData.otherServicesText && `Other Services: ${submitData.otherServicesText}`,
+        submitData.additionalInfo && `Additional Info: ${submitData.additionalInfo}`,
+      ].filter(Boolean);
+
+      const subject = encodeURIComponent(`Enquiry from ${submitData.name}`);
+      const body = encodeURIComponent(lines.join('\n'));
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+
+      this.formData.submit = true;
+      this.isSubmitting = false;
     },
     handleCountryChange() {
       if (this.formData.countryOfTrade === 'other') {
@@ -339,6 +340,23 @@ export default {
 <style scoped>
 
 
+
+.success-message {
+  display: block;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.success-message h2 {
+  font-size: 2rem;
+  color: #2d3436;
+  margin-bottom: 1rem;
+}
+
+.success-message p {
+  font-size: 1.1rem;
+  color: #636e72;
+}
 
 .contact-page {
   padding-top: 1rem;

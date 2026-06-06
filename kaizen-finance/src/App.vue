@@ -47,17 +47,15 @@ export default {
       navigation: [
         { name: 'Home', href: '/home', requiresAuth: false },
         { name: 'Services', href: '/services', requiresAuth: false },
-        { name: 'Price', href: '/order/pricing', requiresAuth: true },
-        { name: 'Order', href: '/order', requiresAuth: true },
-        { name: 'Contract', href: '/contracts', requiresAuth: true },
-        { name: 'Manager', href: '/manager', requiresAuth: true, requiresManager: true },
-        { name: 'Training', href: '/training', requiresAuth: false },
         { name: 'Contact', href: '/contact', requiresAuth: false },
-        { name: 'Career', href: '/career', requiresAuth: false },
-        { name: 'Login', href: '/login', hideWhenAuth: true },
-
-        
-        
+        // Hidden from nav — pages kept for future use
+        { name: 'Price', href: '/order/pricing', requiresAuth: true, hidden: true },
+        { name: 'Order', href: '/order', requiresAuth: true, hidden: true },
+        { name: 'Contract', href: '/contracts', requiresAuth: true, hidden: true },
+        { name: 'Manager', href: '/manager', requiresAuth: true, requiresManager: true, hidden: true },
+        { name: 'Training', href: '/training', requiresAuth: false, hidden: true },
+        { name: 'Career', href: '/career', requiresAuth: false, hidden: true },
+        { name: 'Login', href: '/login', hideWhenAuth: true, hidden: true },
       ]
     }
   },

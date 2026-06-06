@@ -41,116 +41,18 @@
     </section>
 
     <!-- Contact Section -->
-
-
-    <!-- Why Choose Us Section -->
-    <section class="why-us-section">
+    <section class="contact-section">
       <div class="section-content">
-        <h2>Why Choose Us?</h2>
+        <h2>Contact Us</h2>
         <p class="section-description">
-          We understand the complexities of modern finance and are committed to helping our clients achieve their financial goals.
+          Get in touch for a free consultation. We are based in London and serve clients worldwide.
         </p>
-        <div class="features-grid">
-          <div class="feature-card">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Proven Expertise</h3>
-            <p>Decades of insight turning complex finance into clear results.</p>
-          </div>
-          <div class="feature-card">
-            <i class="fas fa-users"></i>
-            <h3>Trusted Experience</h3>
-            <p>A track record of success you can rely on.</p>
-          </div>
-          <div class="feature-card">
-            <i class="fas fa-globe"></i>
-            <h3>Client-Focused Strategies</h3>
-            <p>Solutions built around your goals, not ours.</p>
-          </div>
+        <div class="contact-details">
+          <p><i class="fas fa-envelope"></i> <a href="mailto:Info@kaizensolution.co.uk">Info@kaizensolution.co.uk</a></p>
+          <p><i class="fas fa-map-marker-alt"></i> London, UK</p>
+          <p><i class="fas fa-clock"></i> Monday – Sunday, 9:00 AM – 6:00 PM</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process-section">
-      <div class="section-content">
-        <h2>How We Work</h2>
-        <p class="section-description">
-          Our streamlined process ensures a smooth and efficient experience for all our clients
-        </p>
-        <div class="process-grid">
-          <div class="process-card">
-            <div class="process-number">1</div>
-            <i class="fas fa-comments"></i>
-            <h3>Request Quote</h3>
-            <p>Share your requirements with us through our simple online form or direct contact</p>
-          </div>
-          <div class="process-card">
-            <div class="process-number">2</div>
-            <i class="fas fa-clock"></i>
-            <h3>Initial Consultation</h3>
-            <p>We'll reach out within 24 hours to schedule a detailed discussion about your needs</p>
-          </div>
-          <div class="process-card">
-            <div class="process-number">3</div>
-            <i class="fas fa-file-signature"></i>
-            <h3>Custom Proposal</h3>
-            <p>Receive a tailored service proposal including detailed scope and pricing</p>
-          </div>
-          <div class="process-card">
-            <div class="process-number">4</div>
-            <i class="fas fa-handshake"></i>
-            <h3>Begin Partnership</h3>
-            <p>Sign the agreement and start working together towards your financial goals</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-      <div class="section-content">
-        <div class="testimonials-header">
-          <h2>Happy Customers</h2>
-          <h3>See what our customers say</h3>
-        </div>
-        
-        <div class="testimonials-container">
-          <div class="testimonials-slider" ref="slider">
-            <div 
-              v-for="testimonial in testimonials" 
-              :key="testimonial.id"
-              class="testimonial-card"
-            >
-              <div class="quote-icon">"</div>
-              <p class="testimonial-text">{{ testimonial.testimonial }}</p>
-              <div class="customer-info">
-                <div class="avatar">
-                  <img 
-                    v-if="testimonial.avatarUrl" 
-                    :src="testimonial.avatarUrl" 
-                    :alt="testimonial.customerName"
-                    @error="handleImageError"
-                  />
-                  <div v-else class="avatar-placeholder">
-                    {{ testimonial.customerName.charAt(0).toUpperCase() }}
-                  </div>
-                </div>
-                <div class="customer-details">
-                  <h4>{{ testimonial.customerName }}</h4>
-                  <p>{{ testimonial.companyName }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Navigation arrows -->
-          <button class="nav-arrow nav-left" @click="previousTestimonial" :disabled="currentIndex === 0">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button class="nav-arrow nav-right" @click="nextTestimonial" :disabled="currentIndex >= testimonials.length - 3">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
+        <router-link to="/contact" class="cta-button">GET IN TOUCH</router-link>
       </div>
     </section>
 
@@ -173,56 +75,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import http from '@/utils/request'
-
-const testimonials = ref([])
-const currentIndex = ref(0)
-const slider = ref(null)
-
-// 获取评价数据
-const fetchTestimonials = async () => {
-  try {
-    const response = await http.get('/api/testimonials')
-    if (response.code === 200) {
-      testimonials.value = response.testimonials
-    }
-  } catch (error) {
-    console.error('Failed to fetch testimonials:', error)
-  }
-}
-
-// 处理图片加载错误
-const handleImageError = (event) => {
-  event.target.style.display = 'none'
-  event.target.nextElementSibling.style.display = 'flex'
-}
-
-// 导航功能
-const nextTestimonial = () => {
-  if (currentIndex.value < testimonials.value.length - 3) {
-    currentIndex.value++
-    updateSliderPosition()
-  }
-}
-
-const previousTestimonial = () => {
-  if (currentIndex.value > 0) {
-    currentIndex.value--
-    updateSliderPosition()
-  }
-}
-
-const updateSliderPosition = () => {
-  if (slider.value) {
-    const cardWidth = 320 // 卡片宽度 + 间距
-    slider.value.style.transform = `translateX(-${currentIndex.value * cardWidth}px)`
-  }
-}
-
-onMounted(() => {
-  fetchTestimonials()
-})
 </script>
 
 <style scoped>
@@ -362,6 +214,31 @@ h2 {
 
 .contact-section {
   background: #f8f9fa;
+}
+
+.contact-details {
+  margin-bottom: 2rem;
+}
+
+.contact-details p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+.contact-details i {
+  color: #007bff;
+  margin-right: 0.5rem;
+  width: 1.2rem;
+}
+
+.contact-details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
 }
 
 .contact-note {
