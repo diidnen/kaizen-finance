@@ -2,7 +2,7 @@
   <div class="contact-page">
     <section class="contact-header">
       <h1>Contact Us</h1>
-      <p>Get a Free Consultation</p>
+      <p>Tell us what you need. We reply within 24 hours.</p>
     </section>
 
     <section class="contact-content" v-show="!formData.submit">
@@ -138,9 +138,7 @@
       <div class="contact-info">
         <div class="info-text">
           <p>
-            We understand that each business has unique financial needs. Use our form to tell us 
-            more about your requirements, and we will provide you with a free consultation for 
-            our financial services.
+            Fill in the form with your name, contact details and what service you need.
           </p>
         </div>
 

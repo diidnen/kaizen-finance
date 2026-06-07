@@ -3,8 +3,8 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <h1>Build Your Business, Secure Your Future</h1>
-        <p>Professional Financial Services based in London, serving clients worldwide with expert solutions</p>
+        <h1>Accounting, Finance &amp; Tax</h1>
+        <p>Based in London. We help with accounting, tax, mortgages, company set-up and business finance.</p>
         <div class="hero-contact">
           <router-link to="/contact" class="cta-button">CONTACT US</router-link>
         </div>
@@ -15,25 +15,21 @@
     <section class="services-section">
       <div class="section-content">
         <h2>Our Services</h2>
-        <p class="section-description">
-          With our professional expertise and industry accreditations, we provide comprehensive financial and business solutions tailored to your needs.
-        </p>
         <div class="services-grid">
           <div class="service-card">
             <i class="fas fa-chart-line"></i>
-            <h3>Accounting & Tax</h3>
-            <p>Clear, compliant accounting  and strategic tax planning to free your time, reduce your worry, and drive your growth.</p>
+            <h3>Accounting &amp; Tax</h3>
+            <p>Bookkeeping, VAT returns, payroll, year-end accounts and tax filing.</p>
           </div>
           <div class="service-card">
             <i class="fas fa-coins"></i>
-            <h3> Business Consultancy</h3>
-            <p>Empowering your business with smart support and strategic insight—so you stay focused, productive, and poised for success
-            </p>
+            <h3>Business Consultancy</h3>
+            <p>Business advice and MIS reporting for your management accounts.</p>
           </div>
           <div class="service-card">
             <i class="fas fa-building"></i>
-            <h3>Corporate and property Finance </h3>
-            <p>Expert financial solutions for individuals and businesses of all sizes</p>
+            <h3>Finance</h3>
+            <p>Commercial loans, mortgages, buy-to-let and property finance.</p>
           </div>
         </div>
         <router-link to="/services" class="secondary-button">FIND OUT MORE</router-link>
@@ -45,7 +41,7 @@
       <div class="section-content">
         <h2>Contact Us</h2>
         <p class="section-description">
-          Get in touch for a free consultation. We are based in London and serve clients worldwide.
+          Email or call us. Free initial consultation.
         </p>
         <div class="contact-details">
           <p><i class="fas fa-envelope"></i> <a href="mailto:Info@kaizensolution.co.uk">Info@kaizensolution.co.uk</a></p>
