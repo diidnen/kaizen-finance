@@ -18,13 +18,14 @@
         </div>
         <div class="service-card">
           <i class="fas fa-chart-line"></i>
-          <h3>Consultancy &amp; MIS</h3>
+          <h3>Business Consultancy &amp; MIS</h3>
+          <p>Business advice on planning, operations and growth.</p>
+          <p class="mis-intro">MIS covers:</p>
           <ul class="mis-list">
-            <li><strong>Management</strong> — processes and controls</li>
-            <li><strong>Information</strong> — reporting, efficiency, company strategy / positioning</li>
-            <li><strong>Systems</strong> — IT infrastructure, IT ecosystem, automation</li>
+            <li><strong>M</strong>anagement (processes and controls)</li>
+            <li><strong>I</strong>nformation (reporting, efficiency and company strategy)</li>
+            <li><strong>S</strong>ystems (IT infrastructure and automation)</li>
           </ul>
-          <p class="mis-note">Management accounting is narrower — mainly internal, focused on process efficiency, with less emphasis on sales and company strategy.</p>
         </div>
       </div>
     </section>
@@ -288,9 +289,10 @@ export default {
   content: none;
 }
 
-.mis-note {
-  font-size: 0.95rem;
-  margin-bottom: 0;
+.mis-intro {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.75rem 0 0.5rem;
 }
 
 h3 {
