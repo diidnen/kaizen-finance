@@ -14,7 +14,7 @@
         <div class="service-card">
           <i class="fas fa-handshake"></i>
           <h3>Mortgage &amp; Commercial Finance</h3>
-          <p>Business loans, commercial mortgages and property finance.</p>
+          <p>Business loans, mortgages and property finance.</p>
         </div>
         <div class="service-card">
           <i class="fas fa-chart-line"></i>
