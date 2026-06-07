@@ -150,7 +150,7 @@
 
           <h4>Hours</h4>
           <div class="business-hours">
-            <p><strong>Monday - Sunday:</strong> 9:00 AM - 6:00 PM</p>
+            <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
           </div>
         </div>
       </div>

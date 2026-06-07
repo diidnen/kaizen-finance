@@ -46,7 +46,7 @@
         <div class="contact-details">
           <p><i class="fas fa-envelope"></i> <a href="mailto:Info@kaizensolution.co.uk">Info@kaizensolution.co.uk</a></p>
           <p><i class="fas fa-map-marker-alt"></i> London, UK</p>
-          <p><i class="fas fa-clock"></i> Monday – Sunday, 9:00 AM – 6:00 PM</p>
+          <p><i class="fas fa-clock"></i> Monday – Friday, 9:00 AM – 6:00 PM</p>
         </div>
         <router-link to="/contact" class="cta-button">GET IN TOUCH</router-link>
       </div>
