@@ -18,8 +18,8 @@
         </div>
         <div class="service-card">
           <i class="fas fa-chart-line"></i>
-          <h3>Consultancy</h3>
-          <p>Business consultancy and MIS (management reporting) setup.</p>
+          <h3>Consultancy &amp; MIS</h3>
+          <p>MIS covers management (processes and controls), information (reporting, efficiency and strategic positioning) and systems (IT infrastructure, IT ecosystem and automation). Management accounting is narrower — mainly internal, focused on process efficiency, with less emphasis on external factors such as sales and company strategy.</p>
         </div>
       </div>
     </section>

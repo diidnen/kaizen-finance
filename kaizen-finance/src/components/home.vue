@@ -23,8 +23,8 @@
           </div>
           <div class="service-card">
             <i class="fas fa-coins"></i>
-            <h3>Business Consultancy</h3>
-            <p>Business advice and MIS reporting for your management accounts.</p>
+            <h3>Business Consultancy &amp; MIS</h3>
+            <p>MIS covers management (processes and controls), information (reporting, efficiency and company strategy) and systems (IT infrastructure and automation). It is broader than management accounting, which is mainly internal and focused on process efficiency.</p>
           </div>
           <div class="service-card">
             <i class="fas fa-building"></i>
