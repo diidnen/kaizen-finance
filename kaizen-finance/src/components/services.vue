@@ -9,12 +9,17 @@
         <div class="service-card">
           <i class="fas fa-calculator"></i>
           <h3>Accounting</h3>
-          <p>Professional accounting services tailored to your business needs</p>
+          <p>Professional accounting services tailored to your business needs.</p>
         </div>
         <div class="service-card">
           <i class="fas fa-handshake"></i>
-          <h3>Mortgage & Commercial Finance</h3>
+          <h3>Mortgage &amp; Commercial Finance</h3>
           <p>Sophisticated funding solutions for business and property financing, delivered with precision and integrity.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Consultancy Service</h3>
+          <p>Expert business consultancy to help you plan, grow, and operate with confidence — plus Management Information Systems (MIS) that deliver clear, timely reporting so you can make smarter decisions.</p>
         </div>
       </div>
     </section>
@@ -24,106 +29,139 @@
       <h2>Additional Services</h2>
       <div class="tabs">
         <div class="tab-buttons">
-          <button 
-            v-for="(tab, index) in tabs" 
+          <button
+            v-for="(category, index) in categories"
             :key="index"
-            :class="[
-              'tab-button', 
-              { active: currentTab === index },
-              { 'font-bold': [0, 1, 2, 3,4,5, 6, 7].includes(index) }
-            ]"
-            @click="currentTab = index"
+            :class="['tab-button', { active: currentCategory === index }]"
+            @click="currentCategory = index"
           >
-            {{ tab.title }}
+            {{ category.title }}
           </button>
         </div>
 
         <div class="tab-content">
-          <div v-show="currentTab === 0" class="tab-pane">
-            <h3>Virtual Office</h3>
-            <p>Virtual office with central London address for businesses and directors.</p>
-            
+          <!-- 1) Set up -->
+          <div v-show="currentCategory === 0" class="tab-pane">
+            <h3>Set up</h3>
+
+            <div class="service-block">
+              <p class="subtitle">Set up Company</p>
+              <p>End-to-end support for UK company formation — from incorporation and registration to the essential steps needed to get your business up and running.</p>
+            </div>
+
+            <div class="service-block">
+              <p class="subtitle">Virtual Office</p>
+              <p>Virtual office with a central London address for businesses and directors.</p>
+            </div>
+
+            <div class="service-block">
+              <p class="subtitle">Banking</p>
+              <p>Strategic banking solutions to help you open and manage business accounts with leading providers.</p>
+            </div>
           </div>
 
-          <div v-show="currentTab === 1" class="tab-pane">
-            <h3>Business Loan</h3>
-            <p>Flexible financing solutions through our trusted partners 
-              <a href="https://www.iwoca.co.uk/" target="_blank" class="company-link">
-                <strong>IWOCA</strong>
-              </a> 
-              and 
-              <a href="https://www.approvity.com/" target="_blank" class="company-link">
-                <strong>Approvity</strong>
-              </a>
-            </p>
-          </div>
+          <!-- 2) Finance -->
+          <div v-show="currentCategory === 1" class="tab-pane">
+            <h3>Finance</h3>
 
-          <div v-show="currentTab === 2" class="tab-pane">
-            <h3>R&D Tax Credits</h3>
-            <p>Maximize your R&D tax relief benefits with our expert guidance</p>
-          </div>
-
-          <div v-show="currentTab === 3" class="tab-pane">
-            <h3>Lending Solutions</h3>
-            <p>Comprehensive mortgage, special lending and commercial lending services</p>
-          </div>
-
-          <div v-show="currentTab === 4" class="tab-pane">
-            <h3>Cloud Accounting</h3>
-            <p>Modern cloud-based accounting solutions for efficient business management</p>
-            <p>We also support and are partners with other cloud accounting system providers.  Please call to enquire. </p>
-            
-            <div class="pricing-info">
-              <p class="discount-text">
-                Price information is available on <a href="https://www.sage.com/en-gb/" target="_blank" class="vendor-link">Sage</a> 
-                and <a href="https://quickbooks.intuit.com/uk/pricing/" target="_blank" class="vendor-link">QuickBooks</a> websites, 
-                as well as other cloud accounting providers. Please contact us for pricing on other platforms.
+            <div class="service-block">
+              <p class="subtitle">Commercial Finance</p>
+              <p>Flexible commercial financing solutions through our trusted partners, including
+                <a href="https://www.natwest.com/" target="_blank" class="company-link"><strong>NatWest</strong></a>,
+                <a href="https://www.iwoca.co.uk/" target="_blank" class="company-link"><strong>IWOCA</strong></a>,
+                and
+                <a href="https://www.approvity.com/" target="_blank" class="company-link"><strong>Approvity</strong></a>
+                — tailored funding to support businesses of all sizes.
               </p>
-              <div class="discount-badge">
-                <span class="discount-amount">10%</span>
-                <span class="discount-label">Ongoing Discount</span>
+            </div>
+
+            <div class="service-block">
+              <p class="subtitle">Property Finance</p>
+              <p>With access to over 700 lenders across the UK, we cover the full range of property finance — from residential mortgages and buy-to-let, to development finance and bridging loans. Whatever your property ambitions, we help you find the right solution.</p>
+            </div>
+
+            <div class="service-block">
+              <p class="subtitle">FX Services — Crezco</p>
+              <p>Crezco is a platform that allows you to buy and sell foreign currency.</p>
+
+              <p class="subtitle">Why choose Crezco?</p>
+              <ul>
+                <li>Transparent pricing with no hidden fees — typically more competitive than traditional banks</li>
+                <li>Secure and straightforward international payment method</li>
+              </ul>
+
+              <p class="caveat">
+                <i class="fas fa-info-circle"></i>
+                Information on rates and fees is indicative and correct as of 2024. Pricing and terms may have changed — please
+                <router-link to="/contact">contact us</router-link>
+                for the most up-to-date information.
+              </p>
+
+              <p class="subtitle">How to use Crezco?</p>
+              <div class="steps">
+                <p>Sign up and verify your account</p>
+                <p>Add your bank account</p>
+                <p>Foreign transaction payment settlement</p>
+              </div>
+
+              <div class="button-container">
+                <button @click="handleForeignExchange" class="left-btn">Click here to fill in the form</button>
+                <button @click="handleForeignExchangeVideo" class="right-btn">Click here to see the training video</button>
               </div>
             </div>
           </div>
 
-          <div v-show="currentTab === 5" class="tab-pane">
-            <h3>Business Banking</h3>
-            <p>Strategic banking solutions for your business needs</p>
-          </div>
+          <!-- 3) System -->
+          <div v-show="currentCategory === 2" class="tab-pane">
+            <h3>System</h3>
 
-          <div v-show="currentTab === 6" class="tab-pane">
-            <h3>Payment Solutions</h3>
-            <p>Integrated payment solutions including 
-              <a href="https://www.paypal.com/" target="_blank" class="company-link">
-                <strong>PayPal</strong>
-              </a> 
-              and 
-              <a href="https://sumup.co.uk/" target="_blank" class="company-link">
-                <strong>SumUp</strong>
-              </a>
-            </p>
-          </div>
+            <div class="service-block">
+              <p class="subtitle">Cloud Accounting</p>
+              <p>Modern cloud-based accounting solutions for efficient business management.</p>
+              <p>We also support and are partners with other cloud accounting system providers. Please call to enquire.</p>
 
-          <div v-show="currentTab === 7" class="tab-pane">
-            <h3>Crezco</h3>
-            <p>Crezco is a platform that allows you to buy and sell foreign currency</p>
-            
-            <p class="subtitle">Why choose Crezco?</p>
-            <ul>
-              <li>No hidden fees, cheaper than banks (with 0.3% to 0.5% rate compared to 2-3% and 25-50 fees in banks)</li>
-              <li>Easy safe payment method</li>
-            </ul>
-            
-            <p class="subtitle">How to use Crezco?</p>
-            <div class="steps">
-              <p>Sign up and verify your account</p>
-              <p>Add your bank account</p>
-              <p>Foreign transaction payment settlement</p>
+              <div class="pricing-info">
+                <p class="discount-text">
+                  Price information is available on
+                  <a href="https://www.sage.com/en-gb/" target="_blank" class="vendor-link">Sage</a>
+                  and
+                  <a href="https://quickbooks.intuit.com/uk/pricing/" target="_blank" class="vendor-link">QuickBooks</a>
+                  websites, as well as other cloud accounting providers. Please contact us for pricing on other platforms.
+                </p>
+                <div class="discount-badge">
+                  <span class="discount-amount">10%</span>
+                  <span class="discount-label">Ongoing Discount</span>
+                </div>
+              </div>
             </div>
 
-            <div class="button-container">
-              <button @click="handleForeignExchange" class="left-btn">Click here to fill in the form</button>
-              <button @click="handleForeignExchangeVideo" class="right-btn">Click here to see the training video</button>
+            <div class="service-block">
+              <p class="subtitle">Payment Solutions</p>
+              <p>Integrated payment solutions including
+                <a href="https://www.paypal.com/" target="_blank" class="company-link"><strong>PayPal</strong></a>
+                and
+                <a href="https://sumup.co.uk/" target="_blank" class="company-link"><strong>SumUp</strong></a>.
+              </p>
+            </div>
+          </div>
+
+          <!-- 4) Consultancy / Tax -->
+          <div v-show="currentCategory === 3" class="tab-pane">
+            <h3>Consultancy / Tax</h3>
+
+            <div class="service-block">
+              <p class="subtitle">R&amp;D (Research and Development) Tax Credit</p>
+              <p>Maximise your R&amp;D tax relief benefits with our expert guidance — helping you identify qualifying activities and claim the relief your business is entitled to.</p>
+            </div>
+
+            <div class="service-block">
+              <p class="subtitle">Tax Review</p>
+              <p>A comprehensive review of your tax position to identify opportunities, ensure compliance, and optimise your tax efficiency.</p>
+            </div>
+
+            <div class="service-block">
+              <p class="subtitle">Property Search</p>
+              <p>Professional support to help you find the right property — whether for business premises, investment, or development purposes.</p>
             </div>
           </div>
         </div>
@@ -137,16 +175,12 @@ export default {
   name: 'Services',
   data() {
     return {
-      currentTab: 0,
-      tabs: [
-        { title: 'Virtual Office' },
-        { title: 'Business Loan' },
-        { title: 'R&D' },
-        { title: 'Lending' },
-        { title: 'Cloud Accounting' },
-        { title: 'Business Banking' },
-        { title: 'Payment Solutions' },
-        { title: 'FX Services' }
+      currentCategory: 0,
+      categories: [
+        { title: 'Set up' },
+        { title: 'Finance' },
+        { title: 'System' },
+        { title: 'Consultancy / Tax' },
       ]
     }
   },
@@ -225,6 +259,11 @@ export default {
 .service-card i {
   font-size: 2.5rem;
   color: #1B365D;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.35rem;
   margin-bottom: 1rem;
 }
 
@@ -326,17 +365,6 @@ li::before {
   }
 }
 
-.tab-button.font-bold {
-  font-weight: 700;
-  color: #1B365D;
-}
-
-.tab-button.font-bold.active {
-  background: #1B365D;
-  color: white;
-  font-weight: 700;
-}
-
 .company-link {
   text-decoration: none;
   color: #1B365D;
@@ -355,8 +383,41 @@ li::before {
 .subtitle {
   color: #1B365D;
   font-weight: 600;
-  margin-top: 1rem;
+  font-size: 1.15rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
+}
+
+.service-block {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.service-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.caveat {
+  background: #fff8e6;
+  border-left: 4px solid #f0ad4e;
+  padding: 0.9rem 1rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #856404;
+  margin: 1rem 0;
+}
+
+.caveat i {
+  margin-right: 0.4rem;
+}
+
+.caveat a {
+  color: #1B365D;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 .steps {
