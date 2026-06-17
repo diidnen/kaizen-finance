@@ -144,7 +144,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  background: white;
+  background: var(--brand-primary);
   z-index: 1000;
 }
 
@@ -176,6 +176,10 @@ export default {
   width: auto;
 }
 
+.header .logo-icon-crop img {
+  filter: brightness(0) invert(1);
+}
+
 
 /* 导航区域 */
 .nav {
@@ -189,7 +193,7 @@ export default {
 }
 
 .nav-link {
-  color: var(--color-primary);
+  color: #ffffff;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
@@ -204,7 +208,7 @@ export default {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: var(--color-primary);
+  background-color: #ffffff;
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
@@ -216,7 +220,7 @@ export default {
 
 .nav-link.active {
   font-weight: 600;
-  color: var(--color-primary);
+  color: #ffffff;
 }
 
 /* 汉堡菜单 */
@@ -235,7 +239,7 @@ export default {
 .hamburger span {
   width: 100%;
   height: 2px;
-  background-color: var(--color-primary);
+  background-color: #ffffff;
   transition: all 0.3s ease;
 }
 
@@ -251,12 +255,12 @@ export default {
     right: 0;
     width: 200px;
     flex-direction: column;
-    background: white;
+    background: var(--brand-primary-dark);
     padding: 1rem;
     gap: 1rem;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
   }
 
   .nav-links-active {

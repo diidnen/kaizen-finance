@@ -635,10 +635,9 @@ h2 {
 <style scoped>
 /* Footer styles appended */
 .site-footer {
-  background: #ffffff;
-  color: #000000;
+  background: var(--brand-primary);
+  color: #ffffff;
   padding: 30px 16px;
-  border-top: 1px solid #e6e6e6;
 }
 
 .footer-inner {
@@ -654,7 +653,14 @@ h2 {
   margin-bottom: 12px;
 }
 
-.footer-links a { color: #000000; text-decoration: underline; }
+.footer-links a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-links a:hover {
+  opacity: 0.85;
+}
 
 .footer-brand {
   display: flex;
@@ -665,5 +671,6 @@ h2 {
 .footer-brand img {
   height: 40px;
   width: auto;
+  filter: brightness(0) invert(1);
 }
 </style>
