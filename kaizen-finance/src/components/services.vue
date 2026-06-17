@@ -324,7 +324,7 @@ li {
 
 li::before {
   content: "•";
-  color: #007bff;
+  color: var(--brand-primary);
   font-weight: bold;
   position: absolute;
   left: -1rem;
@@ -493,7 +493,7 @@ button {
 }
 
 button:hover {
-  background: #0056b3;
+  background: var(--brand-primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
 }

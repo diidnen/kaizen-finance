@@ -4,7 +4,9 @@
       <div class="header-container">
         <!-- 品牌区域 -->
         <div class="brand" @click="goToHome">
-          <img src="@/assets/final.png" alt="logo" class="logo">
+          <div class="logo-icon-crop">
+            <img src="@/assets/final.png" alt="Kaizen Finance Solution" class="logo">
+          </div>
         </div>
         
         <!-- 导航栏 -->
@@ -124,10 +126,7 @@ export default {
 </script>
 
 <style>
-:root {
-  --header-height: 4rem;
-  --color-primary: #000000;
-}
+@import '@/assets/brand.css';
 
 .main-content {
   margin-top: var(--header-height);
@@ -147,6 +146,7 @@ export default {
   width: 100%;
   background: white;
   z-index: 1000;
+  border-bottom: 3px solid var(--brand-primary);
 }
 
 .header-container {
@@ -173,7 +173,7 @@ export default {
 }
 
 .logo {
-  height: 2.5rem;
+  height: 2.75rem;
   width: auto;
 }
 

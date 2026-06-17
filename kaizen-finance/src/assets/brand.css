@@ -1,0 +1,22 @@
+:root {
+  --brand-primary: #1B365D;
+  --brand-primary-dark: #132a47;
+  --brand-primary-light: #2a4a75;
+  --header-height: 4rem;
+  --color-primary: #1B365D;
+}
+
+.logo-icon-crop {
+  width: 2.75rem;
+  height: 2.75rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.logo-icon-crop img {
+  height: 2.75rem;
+  width: auto;
+  max-width: none;
+  display: block;
+}

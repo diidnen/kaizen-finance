@@ -3,8 +3,17 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <h1>Accounting, Finance &amp; Tax</h1>
-        <p>Based in London. We help with accounting, tax, mortgages, company set-up and business finance.</p>
+        <div class="hero-brand">
+          <div class="hero-logo-mark logo-icon-crop">
+            <img src="@/assets/final.png" alt="" class="hero-logo-crop" />
+          </div>
+          <div class="hero-company-name">
+            <span class="company-line">KAIZEN</span>
+            <span class="company-line">FINANCE SOLUTION</span>
+          </div>
+        </div>
+        <h1 class="hero-tagline">Accounting, Finance &amp; Tax</h1>
+        <p class="hero-subtitle">Based in London. We help with accounting, tax, mortgages, company set-up and business finance.</p>
         <div class="hero-contact">
           <router-link to="/contact" class="cta-button">CONTACT US</router-link>
         </div>
@@ -85,19 +94,59 @@
 }
 
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(27, 54, 93, 0.88), rgba(27, 54, 93, 0.88)),
               url('@/assets/building.png') center/cover;
-  height: 80vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-  padding: 0 20px;
+  padding: 3rem 20px;
 }
 
 .hero-content {
   max-width: 800px;
+}
+
+.hero-brand {
+  margin-bottom: 2rem;
+}
+
+.hero-logo-mark {
+  width: 8.5rem;
+  height: 8.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-logo-mark img {
+  height: 8.5rem;
+}
+
+.hero-company-name {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+}
+
+.company-line {
+  display: block;
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+}
+
+.hero-tagline {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.6;
 }
 
 .hero-content h1 {
@@ -137,7 +186,7 @@ section {
 h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--brand-primary);
 }
 
 .section-description {
@@ -168,7 +217,7 @@ h2 {
 
 .service-card i, .feature-card i {
   font-size: 2.5rem;
-  color: #007bff;
+  color: var(--brand-primary);
   margin-bottom: 1.5rem;
 }
 
@@ -207,33 +256,44 @@ h2 {
 .cta-button {
   display: inline-block;
   padding: 1rem 2.5rem;
-  background: #007bff;
-  color: white;
+  background: white;
+  color: var(--brand-primary);
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .cta-button:hover {
-  background: #0056b3;
+  background: var(--brand-primary-dark);
+  color: white;
 }
 
 .secondary-button {
   display: inline-block;
   padding: 1rem 2.5rem;
   background: transparent;
-  color: #007bff;
+  color: var(--brand-primary);
   text-decoration: none;
-  border: 2px solid #007bff;
+  border: 2px solid var(--brand-primary);
   border-radius: 5px;
   font-weight: bold;
   transition: all 0.3s ease;
 }
 
 .secondary-button:hover {
-  background: #007bff;
+  background: var(--brand-primary);
   color: white;
+}
+
+.hero .cta-button {
+  background: white;
+  color: var(--brand-primary);
+}
+
+.hero .cta-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brand-primary-dark);
 }
 
 .contact-section {
@@ -251,13 +311,13 @@ h2 {
 }
 
 .contact-details i {
-  color: #007bff;
+  color: var(--brand-primary);
   margin-right: 0.5rem;
   width: 1.2rem;
 }
 
 .contact-details a {
-  color: #007bff;
+  color: var(--brand-primary);
   text-decoration: none;
 }
 

@@ -410,7 +410,7 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: var(--brand-primary);
   background: white;
   box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1);
 }
@@ -442,7 +442,7 @@ textarea {
 }
 
 .service-option:hover {
-  border-color: #007bff;
+  border-color: var(--brand-primary);
   transform: translateY(-2px);
 }
 
@@ -458,7 +458,7 @@ textarea {
 .service-option input[type="checkbox"] {
   width: 20px;
   height: 20px;
-  border: 2px solid #007bff;
+  border: 2px solid var(--brand-primary);
   border-radius: 6px;
   margin: 0;
 }
@@ -466,7 +466,7 @@ textarea {
 .submit-btn {
   width: 100%;
   padding: 0.8rem;
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -484,7 +484,7 @@ textarea {
 .submit-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
-  background: linear-gradient(135deg, #0056b3 0%, #004494 100%);
+  background: linear-gradient(135deg, var(--brand-primary-dark) 0%, #0d1f35 100%);
 }
 
 .submit-btn:active {
@@ -532,14 +532,14 @@ textarea {
 }
 
 .privacy-notice a {
-  color: #007bff;
+  color: var(--brand-primary);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .privacy-notice a:hover {
-  color: #0056b3;
+  color: var(--brand-primary-dark);
   text-decoration: underline;
 }
 
@@ -606,7 +606,7 @@ textarea {
 }
 
 .dropdown-button:hover {
-  border-color: #007bff;
+  border-color: var(--brand-primary);
 }
 
 .dropdown-arrow {
