@@ -94,7 +94,7 @@
 }
 
 .hero {
-  background: linear-gradient(rgba(27, 54, 93, 0.88), rgba(27, 54, 93, 0.88)),
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
               url('@/assets/building.png') center/cover;
   min-height: 85vh;
   display: flex;
@@ -287,13 +287,13 @@ h2 {
 }
 
 .hero .cta-button {
-  background: white;
-  color: var(--brand-primary);
+  background: var(--brand-primary);
+  color: white;
 }
 
 .hero .cta-button:hover {
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--brand-primary-dark);
+  background: var(--brand-primary-dark);
+  color: white;
 }
 
 .contact-section {

@@ -146,7 +146,6 @@ export default {
   width: 100%;
   background: white;
   z-index: 1000;
-  border-bottom: 3px solid var(--brand-primary);
 }
 
 .header-container {
