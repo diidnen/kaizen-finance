@@ -4,8 +4,13 @@
       <div class="header-container">
         <!-- 品牌区域 -->
         <div class="brand" @click="goToHome">
-          <div class="logo-icon-crop">
-            <img src="@/assets/final.png" alt="Kaizen Finance Solution" class="logo">
+          <img
+            src="@/assets/kaizen-logo-lockup.png"
+            alt="Kaizen Finance Solution"
+            class="brand-lockup brand-lockup-desktop"
+          />
+          <div class="logo-icon-crop brand-lockup-mobile">
+            <img src="@/assets/kaizen-logo-lockup.png" alt="Kaizen Finance Solution" class="logo">
           </div>
         </div>
         
@@ -174,10 +179,7 @@ export default {
 .logo {
   height: 2.75rem;
   width: auto;
-}
-
-.header .logo-icon-crop img {
-  filter: brightness(0) invert(1);
+  mix-blend-mode: lighten;
 }
 
 

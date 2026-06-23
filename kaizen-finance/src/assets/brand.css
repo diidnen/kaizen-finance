@@ -2,10 +2,11 @@
   --brand-primary: #1B365D;
   --brand-primary-dark: #132a47;
   --brand-primary-light: #2a4a75;
-  --header-height: 4rem;
+  --header-height: 4.5rem;
   --color-primary: #1B365D;
 }
 
+/* Crop circular K icon from horizontal lockup (left portion) */
 .logo-icon-crop {
   width: 2.75rem;
   height: 2.75rem;
@@ -19,4 +20,38 @@
   width: auto;
   max-width: none;
   display: block;
+}
+
+/* Official horizontal brand lockup — black bg hidden via lighten on dark surfaces */
+.brand-lockup {
+  height: 3rem;
+  width: auto;
+  display: block;
+  mix-blend-mode: lighten;
+}
+
+.brand-lockup-desktop {
+  display: block;
+}
+
+.brand-lockup-mobile {
+  display: none;
+}
+
+.hero-brand-lockup {
+  width: min(100%, 26rem);
+  height: auto;
+  margin: 0 auto 2rem;
+  display: block;
+  mix-blend-mode: lighten;
+}
+
+@media (max-width: 768px) {
+  .brand-lockup-desktop {
+    display: none;
+  }
+
+  .brand-lockup-mobile {
+    display: block;
+  }
 }

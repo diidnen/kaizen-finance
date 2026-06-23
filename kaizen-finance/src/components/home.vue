@@ -4,13 +4,11 @@
     <section class="hero">
       <div class="hero-content">
         <div class="hero-brand">
-          <div class="hero-logo-mark logo-icon-crop">
-            <img src="@/assets/final.png" alt="" class="hero-logo-crop" />
-          </div>
-          <div class="hero-company-name">
-            <span class="company-line">KAIZEN</span>
-            <span class="company-line">FINANCE SOLUTION</span>
-          </div>
+          <img
+            src="@/assets/kaizen-logo-lockup.png"
+            alt="Kaizen Finance Solution"
+            class="hero-brand-lockup"
+          />
         </div>
         <h1 class="hero-tagline">Accounting, Finance &amp; Tax</h1>
         <p class="hero-subtitle">Based in London. We help with accounting, tax, mortgages, company set-up and business finance.</p>
@@ -71,7 +69,7 @@
     <div class="site-footer">
       <div class="footer-inner">
         <div class="footer-brand">
-          <img src="@/assets/final.png" alt="Kaizen Finance" />
+          <img src="@/assets/kaizen-logo-lockup.png" alt="Kaizen Finance Solution" />
         </div>
         <div class="footer-links">
           <router-link to="/privacy-policy">Privacy Policy</router-link>
@@ -110,33 +108,11 @@
 }
 
 .hero-brand {
-  margin-bottom: 2rem;
-}
-
-.hero-logo-mark {
-  width: 8.5rem;
-  height: 8.5rem;
-  margin: 0 auto 1.5rem;
-}
-
-.hero-logo-mark img {
-  height: 8.5rem;
-}
-
-.hero-company-name {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  line-height: 1.25;
-}
-
-.company-line {
-  display: block;
-  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  margin-bottom: 1.5rem;
 }
 
 .hero-tagline {
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-size: clamp(1.35rem, 3.5vw, 1.85rem);
   font-weight: 600;
   margin-bottom: 1rem;
   color: white;
@@ -669,8 +645,8 @@ h2 {
 }
 
 .footer-brand img {
-  height: 40px;
+  height: 48px;
   width: auto;
-  filter: brightness(0) invert(1);
+  mix-blend-mode: lighten;
 }
 </style>
