@@ -211,6 +211,7 @@ export default {
   margin: 0 auto;
   padding: 2rem;
   color: #2F4F4F;
+  background: #ffffff;
 }
 
 .main-title {

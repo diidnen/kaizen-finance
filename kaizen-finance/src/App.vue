@@ -7,10 +7,10 @@
           <img
             src="@/assets/kaizen-logo-lockup.png"
             alt="Kaizen Finance Solution"
-            class="brand-lockup brand-lockup-desktop"
+            class="brand-lockup brand-lockup-desktop logo-on-blue"
           />
           <div class="logo-icon-crop brand-lockup-mobile">
-            <img src="@/assets/kaizen-logo-lockup.png" alt="Kaizen Finance Solution" class="logo">
+            <img src="@/assets/kaizen-logo-lockup.png" alt="Kaizen Finance Solution" class="logo logo-on-blue">
           </div>
         </div>
         
@@ -179,7 +179,6 @@ export default {
 .logo {
   height: 2.75rem;
   width: auto;
-  mix-blend-mode: lighten;
 }
 
 

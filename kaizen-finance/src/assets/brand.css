@@ -2,32 +2,42 @@
   --brand-primary: #1B365D;
   --brand-primary-dark: #132a47;
   --brand-primary-light: #2a4a75;
-  --header-height: 4.5rem;
+  --header-height: 5rem;
   --color-primary: #1B365D;
 }
 
-/* Crop circular K icon from horizontal lockup (left portion) */
+body,
+#app,
+.main-content {
+  background: #ffffff;
+}
+
+/* Crop circular K icon from horizontal lockup */
 .logo-icon-crop {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 3rem;
+  height: 3rem;
   overflow: hidden;
   flex-shrink: 0;
   border-radius: 50%;
 }
 
 .logo-icon-crop img {
-  height: 2.75rem;
+  height: 3rem;
   width: auto;
   max-width: none;
   display: block;
 }
 
-/* Official horizontal brand lockup — black bg hidden via lighten on dark surfaces */
+/* White logo on blue header / dark hero */
+.logo-on-blue,
+.logo-on-dark {
+  filter: brightness(0) invert(1);
+}
+
 .brand-lockup {
-  height: 3rem;
+  height: 3.5rem;
   width: auto;
   display: block;
-  mix-blend-mode: lighten;
 }
 
 .brand-lockup-desktop {
@@ -39,11 +49,10 @@
 }
 
 .hero-brand-lockup {
-  width: min(100%, 26rem);
+  width: min(100%, 32rem);
   height: auto;
   margin: 0 auto 2rem;
   display: block;
-  mix-blend-mode: lighten;
 }
 
 @media (max-width: 768px) {
@@ -53,5 +62,14 @@
 
   .brand-lockup-mobile {
     display: block;
+  }
+
+  .logo-icon-crop {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .logo-icon-crop img {
+    height: 2.75rem;
   }
 }

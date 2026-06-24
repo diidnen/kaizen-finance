@@ -353,7 +353,7 @@ export default {
 
 .contact-page {
   padding-top: 1rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #ffffff;
   min-height: 100vh;
 }
 

@@ -7,7 +7,7 @@
           <img
             src="@/assets/kaizen-logo-lockup.png"
             alt="Kaizen Finance Solution"
-            class="hero-brand-lockup"
+            class="hero-brand-lockup logo-on-dark"
           />
         </div>
         <h1 class="hero-tagline">Accounting, Finance &amp; Tax</h1>
@@ -69,7 +69,10 @@
     <div class="site-footer">
       <div class="footer-inner">
         <div class="footer-brand">
-          <img src="@/assets/kaizen-logo-lockup.png" alt="Kaizen Finance Solution" />
+          <div class="logo-icon-crop footer-icon">
+            <img src="@/assets/kaizen-logo-lockup.png" alt="" />
+          </div>
+          <p class="footer-brand-name">Kaizen Finance Solution</p>
         </div>
         <div class="footer-links">
           <router-link to="/privacy-policy">Privacy Policy</router-link>
@@ -147,6 +150,10 @@
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+.services-section {
+  background: #ffffff;
 }
 
 section {
@@ -273,7 +280,7 @@ h2 {
 }
 
 .contact-section {
-  background: #f8f9fa;
+  background: #ffffff;
 }
 
 .contact-details {
@@ -611,9 +618,10 @@ h2 {
 <style scoped>
 /* Footer styles appended */
 .site-footer {
-  background: var(--brand-primary);
-  color: #ffffff;
+  background: #ffffff;
+  color: #333333;
   padding: 30px 16px;
+  border-top: 1px solid #e6e6e6;
 }
 
 .footer-inner {
@@ -630,23 +638,37 @@ h2 {
 }
 
 .footer-links a {
-  color: #ffffff;
+  color: var(--brand-primary);
   text-decoration: underline;
 }
 
 .footer-links a:hover {
-  opacity: 0.85;
+  color: var(--brand-primary-dark);
 }
 
 .footer-brand {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
   margin-bottom: 12px;
 }
 
-.footer-brand img {
-  height: 48px;
-  width: auto;
-  mix-blend-mode: lighten;
+.footer-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.footer-icon img {
+  height: 3.5rem;
+}
+
+.footer-brand-name {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--brand-primary);
+  margin: 0;
 }
 </style>
