@@ -1,7 +1,8 @@
 :root {
-  --brand-primary: #1B365D;
-  --brand-primary-dark: #132a47;
-  --brand-primary-light: #2a4a75;
+  --brand-primary: #3A6BC9;
+  --brand-nav: #2C5BA0;
+  --brand-primary-dark: #1B365D;
+  --brand-primary-light: #5B84B1;
   --header-height: 5rem;
   --color-primary: #1B365D;
 }
@@ -28,10 +29,10 @@ body,
   display: block;
 }
 
-/* White logo on blue header / dark hero */
+/* Logo on dark/coloured backgrounds — hide black background, keep blue logo */
 .logo-on-blue,
 .logo-on-dark {
-  filter: brightness(0) invert(1);
+  mix-blend-mode: screen;
 }
 
 .brand-lockup {

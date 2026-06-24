@@ -149,7 +149,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--brand-primary);
+  background: var(--brand-nav);
   z-index: 1000;
 }
 
@@ -256,7 +256,7 @@ export default {
     right: 0;
     width: 200px;
     flex-direction: column;
-    background: var(--brand-primary-dark);
+    background: var(--brand-nav);
     padding: 1rem;
     gap: 1rem;
     transform: translateX(100%);
