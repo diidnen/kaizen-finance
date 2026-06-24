@@ -1,8 +1,9 @@
 :root {
-  --brand-primary: #3A6BC9;
-  --brand-nav: #2C5BA0;
-  --brand-primary-dark: #1B365D;
-  --brand-primary-light: #5B84B1;
+  --brand-primary:      #1B365D;  /* company deep blue — header */
+  --brand-primary-dark: #132a47;  /* hover / active */
+  --brand-primary-light:#5B84B1;  /* logo / accent blue */
+  --brand-footer-bg:    #D6E8F7;  /* light blue footer */
+  --brand-footer-text:  #1B365D;  /* dark blue text on light footer */
   --header-height: 5rem;
   --color-primary: #1B365D;
 }
@@ -13,7 +14,31 @@ body,
   background: #ffffff;
 }
 
-/* Crop circular K icon from horizontal lockup */
+/* Logo on dark/coloured backgrounds — hides black bg, keeps blue logo */
+.logo-on-blue,
+.logo-on-dark {
+  mix-blend-mode: screen;
+}
+
+/* Horizontal brand lockup in header */
+.brand-lockup {
+  height: 3.5rem;
+  width: auto;
+  display: block;
+}
+
+.brand-lockup-desktop { display: block; }
+.brand-lockup-mobile  { display: none; }
+
+/* Hero full-width lockup */
+.hero-brand-lockup {
+  width: min(100%, 34rem);
+  height: auto;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+/* Circular K crop (mobile nav) */
 .logo-icon-crop {
   width: 3rem;
   height: 3rem;
@@ -29,48 +54,10 @@ body,
   display: block;
 }
 
-/* Logo on dark/coloured backgrounds — hide black background, keep blue logo */
-.logo-on-blue,
-.logo-on-dark {
-  mix-blend-mode: screen;
-}
-
-.brand-lockup {
-  height: 3.5rem;
-  width: auto;
-  display: block;
-}
-
-.brand-lockup-desktop {
-  display: block;
-}
-
-.brand-lockup-mobile {
-  display: none;
-}
-
-.hero-brand-lockup {
-  width: min(100%, 32rem);
-  height: auto;
-  margin: 0 auto 2rem;
-  display: block;
-}
-
 @media (max-width: 768px) {
-  .brand-lockup-desktop {
-    display: none;
-  }
+  .brand-lockup-desktop { display: none; }
+  .brand-lockup-mobile  { display: block; }
 
-  .brand-lockup-mobile {
-    display: block;
-  }
-
-  .logo-icon-crop {
-    width: 2.75rem;
-    height: 2.75rem;
-  }
-
-  .logo-icon-crop img {
-    height: 2.75rem;
-  }
+  .logo-icon-crop     { width: 2.75rem; height: 2.75rem; }
+  .logo-icon-crop img { height: 2.75rem; }
 }
